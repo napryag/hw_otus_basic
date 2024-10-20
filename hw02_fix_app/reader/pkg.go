@@ -24,7 +24,6 @@ func ReadJSON(filePath string, _ int) ([]types.Employee, error) {
 	var data []types.Employee
 
 	err = json.Unmarshal(bytes, &data)
-
 	if err != nil {
 		fmt.Printf("Error: %v", err)
 		return nil, nil
