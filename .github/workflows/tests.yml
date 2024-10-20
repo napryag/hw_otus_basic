@@ -1,6 +1,10 @@
 name: Otus homework tests
 
 on:
+  pull_request:
+    branches: 
+      - main
+      - hw*
   push:
     branches:
       - hw*
