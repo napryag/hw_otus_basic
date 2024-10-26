@@ -1,36 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func makeChessboard(h int, w int) {
-	even := []string{}
-
-	for k := 0; k < (w / 2); k++ {
-		even = append(even, "  #")
+func main() {
+	h, w, err := scanValues()
+	if err != nil {
+		fmt.Println("Не удалось создать доску по причине:", err)
 	}
 
-	uneven := []string{}
-
-	for j := 0; j < (w / 2); j++ {
-		uneven = append(uneven, "#  ")
-	}
-
-	for i := 1; i <= h; i++ {
-		if i%2 != 0 {
-			fmt.Println(uneven)
-		} else {
-			fmt.Println(even)
+	for i := 0; i < h; i++ {
+		for j := 0; j < w; j++ {
+			fmt.Print(gavno(i + j))
 		}
+		fmt.Println()
 	}
 }
 
-func main() {
-	var hight int
-	var width int
+func gavno(n int) string {
+	if n%2 == 0 {
+		return "#"
+	}
+	return " "
+}
 
-	fmt.Println("Введите размер поля. \n", "Укажите высоту и ширину через пробел: ")
-
-	fmt.Scanf("%d %d", &hight, &width)
-
-	makeChessboard(hight, width)
+func scanValues() (int, int, error) {
+	var hight, width int
+	fmt.Println("Укажите размер шахматной доски. Введите высоту доски: ")
+	fmt.Scan(&hight)
+	fmt.Println("Введите ширину доски: ")
+	fmt.Scan(&width)
+	if hight <= 0 || width <= 0 {
+		err := errors.New("значение высоты и ширины не может равняться нулю или быть отрицательным")
+		return hight, width, err
+	}
+	return hight, width, nil
 }
