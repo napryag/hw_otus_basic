@@ -13,13 +13,13 @@ func main() {
 
 	for i := 0; i < h; i++ {
 		for j := 0; j < w; j++ {
-			fmt.Print(gavno(i + j))
+			fmt.Print(boardWriter(i + j))
 		}
 		fmt.Println()
 	}
 }
 
-func gavno(n int) string {
+func boardWriter(n int) string {
 	if n%2 == 0 {
 		return "#"
 	}
