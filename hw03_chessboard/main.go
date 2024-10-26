@@ -33,7 +33,7 @@ func scanValues() (int, int, error) {
 	fmt.Println("Введите ширину доски: ")
 	fmt.Scan(&width)
 	if hight <= 0 || width <= 0 {
-		err := errors.New("значение высоты и ширины не может равняться нулю или быть отрицательным")
+		err := errors.New("значение высоты и ширины должно быть положительным целым числом")
 		return hight, width, err
 	}
 	return hight, width, nil
