@@ -1,6 +1,12 @@
 package types
 
-import "fmt"
+type enum int
+
+const (
+	YEAR enum = iota + 1
+	SIZE
+	RATE
+)
 
 type Book struct {
 	id     int
@@ -11,39 +17,84 @@ type Book struct {
 	rate   float32
 }
 
-func (b *Book) SetBook(id int, title string, author string, year int, size int, rate float32) {
+func NewBook(id int, titile, author string, year, size int, rate float32) *Book {
+	return &Book{
+		id:     id,
+		title:  titile,
+		author: author,
+		year:   year,
+		size:   size,
+		rate:   rate,
+	}
+}
+
+func (b *Book) SetID(id int) {
 	b.id = id
+}
+
+func (b *Book) SetTitle(title string) {
 	b.title = title
+}
+
+func (b *Book) SetAuthor(author string) {
 	b.author = author
+}
+
+func (b *Book) SetYear(year int) {
 	b.year = year
+}
+
+func (b *Book) SetSize(size int) {
 	b.size = size
+}
+
+func (b *Book) SetRate(rate float32) {
 	b.rate = rate
 }
 
-func (b Book) Book() string {
-	return fmt.Sprintf(
-		"ID: %d; Title: %s; Author: %s; Year: %d; Size: %d; Rate: %g",
-		b.id,
-		b.title,
-		b.author,
-		b.year,
-		b.size,
-		b.rate,
-	)
+func (b *Book) ID() int {
+	return b.id
 }
 
-type Comparator struct{}
+func (b *Book) Title() string {
+	return b.title
+}
 
-func (c Comparator) Compare(k int, b1, b2 Book) {
-	switch k {
-	case 1:
-		fmt.Printf("Книга %s издана позже, чем книга %s: ", b1.title, b2.title)
-		fmt.Println(b1.year > b2.year)
-	case 2:
-		fmt.Printf("Книга %s имеет больше страниц, чем книга %s: ", b1.title, b2.title)
-		fmt.Println(b1.size > b2.size)
-	case 3:
-		fmt.Printf("Книга %s имеет больший рейтинг, чем книга %s: ", b1.title, b2.title)
-		fmt.Println(b1.rate > b2.rate)
+func (b *Book) Author() string {
+	return b.author
+}
+
+func (b *Book) Year() int {
+	return b.year
+}
+
+func (b *Book) Size() int {
+	return b.size
+}
+
+func (b *Book) Rate() float32 {
+	return b.rate
+}
+
+type Comparator struct {
+	mode enum
+}
+
+func NewComparator(mode enum) *Comparator {
+	return &Comparator{
+		mode: mode,
+	}
+}
+
+func (c Comparator) Compare(b1, b2 Book) bool {
+	switch c.mode {
+	case YEAR:
+		return b1.year > b2.year
+	case SIZE:
+		return b1.size > b2.size
+	case RATE:
+		return b1.rate > b2.rate
+	default:
+		return false
 	}
 }
