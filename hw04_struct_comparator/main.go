@@ -15,9 +15,9 @@ func main() {
 	comp3 := types.NewComparator(types.RATE)
 
 	fmt.Printf("Книга %s выпущена раньше, чем книга %s: ", book1.Title(), book2.Title())
-	fmt.Println(comp1.Compare(*book1, *book2))
+	fmt.Println(comp1.Compare(book1, book2))
 	fmt.Printf("Книга %s имеет больше страниц, чем книга %s: ", book1.Title(), book2.Title())
-	fmt.Println(comp2.Compare(*book1, *book2))
+	fmt.Println(comp2.Compare(book1, book2))
 	fmt.Printf("Книга %s имеет больший рейтинг, чем книга %s: ", book1.Title(), book2.Title())
-	fmt.Println(comp3.Compare(*book1, *book2))
+	fmt.Println(comp3.Compare(book1, book2))
 }

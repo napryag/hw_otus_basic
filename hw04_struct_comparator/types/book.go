@@ -86,7 +86,7 @@ func NewComparator(mode enum) *Comparator {
 	}
 }
 
-func (c Comparator) Compare(b1, b2 Book) bool {
+func (c Comparator) Compare(b1, b2 *Book) bool {
 	switch c.mode {
 	case YEAR:
 		return b1.year > b2.year
