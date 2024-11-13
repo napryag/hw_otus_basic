@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/fixme_my_friend/hw05_shapes/figures"
-	"github.com/fixme_my_friend/hw05_shapes/figures/circle"
-	"github.com/fixme_my_friend/hw05_shapes/figures/rectangle"
-	"github.com/fixme_my_friend/hw05_shapes/figures/square"
-	"github.com/fixme_my_friend/hw05_shapes/figures/triangle"
+	"github.com/napryag/hw_otus_basic/hw05_shapes/figures"
+	"github.com/napryag/hw_otus_basic/hw05_shapes/figures/circle"
+	"github.com/napryag/hw_otus_basic/hw05_shapes/figures/rectangle"
+	"github.com/napryag/hw_otus_basic/hw05_shapes/figures/square"
+	"github.com/napryag/hw_otus_basic/hw05_shapes/figures/triangle"
 )
 
 func main() {
