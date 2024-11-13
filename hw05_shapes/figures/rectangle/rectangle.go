@@ -7,9 +7,9 @@ type Rectangle struct {
 	SecondSide float64
 }
 
-func (r *Rectangle) NewRectangle(FirstSide float64, SecondSide float64) {
-	r.FirstSide = FirstSide
-	r.SecondSide = SecondSide
+func (r *Rectangle) NewRectangle(firstSide float64, secondSide float64) {
+	r.FirstSide = firstSide
+	r.SecondSide = secondSide
 }
 
 func (r Rectangle) CalculateArea() float64 {

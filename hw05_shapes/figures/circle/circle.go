@@ -8,8 +8,8 @@ type Circle struct {
 	Radius float64
 }
 
-func (c *Circle) NewCircle(Radius float64) {
-	c.Radius = Radius
+func (c *Circle) NewCircle(radius float64) {
+	c.Radius = radius
 }
 
 func (c Circle) CalculateArea() float64 {

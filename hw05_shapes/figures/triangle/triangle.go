@@ -7,9 +7,9 @@ type Triangle struct {
 	Base  float64
 }
 
-func (t *Triangle) NewTriangle(Hight float64, Base float64) {
-	t.Hight = Hight
-	t.Base = Base
+func (t *Triangle) NewTriangle(hight float64, base float64) {
+	t.Hight = hight
+	t.Base = base
 }
 
 func (t Triangle) CalculateArea() float64 {

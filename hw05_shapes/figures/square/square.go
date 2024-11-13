@@ -6,8 +6,8 @@ type Square struct {
 	Side float64
 }
 
-func (s *Square) NewSquare(Side float64) {
-	s.Side = Side
+func (s *Square) NewSquare(side float64) {
+	s.Side = side
 }
 
 func (s Square) CalculatePerimeter() float64 {
