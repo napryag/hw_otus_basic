@@ -7,12 +7,12 @@ import (
 
 func strEditor(s string) []string {
 	s = strings.Join(strings.Fields(s), " ")
-	var rep = []string{",", ".", "!", "?", ":", ";", "'", "@", "#", "$", "%", "№"}
+	rep := []string{",", ".", "!", "?", ":", ";", "'", "@", "#", "$", "%", "№"}
 	for key := range rep {
-		s = strings.Replace(s, rep[key], "", -1)
+		s = strings.ReplaceAll(s, rep[key], "")
 	}
 	s = strings.ToLower(s)
-	var sl = strings.Split(s, " ")
+	sl := strings.Split(s, " ")
 	return sl
 }
 
