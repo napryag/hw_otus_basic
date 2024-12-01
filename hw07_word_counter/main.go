@@ -7,7 +7,7 @@ import (
 
 func strEditor(s string) []string {
 	s = strings.Join(strings.Fields(s), " ")
-	rep := []string{",", ".", "!", "?", ":", ";", "'", "@", "#", "$", "%", "№"}
+	rep := []string{",", ".", "!", "?", ":", ";", "...", "(", ")"}
 	for key := range rep {
 		s = strings.ReplaceAll(s, rep[key], "")
 	}
@@ -31,7 +31,8 @@ func countWords(text string) map[string]int {
 }
 
 func main() {
-	bb := countWords("      Теперь  поговорим  немного!   о  том,!?  как  пакет  strings  может увеличить производительность может как о Теперь. Теперь.")
+	bb := countWords("      Теперь  поговорим  немного!   о  том,!?  как  пакет  " +
+		"strings  может увеличить производительность может как о Теперь. Теперь.")
 	fmt.Println(bb["как"])
 	fmt.Println(bb["теперь"])
 }
