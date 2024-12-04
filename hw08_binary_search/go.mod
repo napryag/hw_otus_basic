@@ -1,4 +1,4 @@
-module github.com/fixme_my_friend/hw08_binary_search
+module github.com/napryag/hw_otus_basic/hw08_binary_search
 
 go 1.20
 
