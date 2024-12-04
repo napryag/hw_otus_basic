@@ -8,11 +8,12 @@ func binarySearch(storage []int, s int) int {
 	for minIndex <= maxIndex {
 		midIndex := (minIndex + maxIndex) / 2
 
-		if s == storage[midIndex] {
+		switch {
+		case storage[midIndex] == s:
 			return s
-		} else if s < storage[midIndex] {
+		case storage[midIndex] > s:
 			maxIndex = midIndex - 1
-		} else {
+		default:
 			minIndex = midIndex + 1
 		}
 	}
@@ -21,5 +22,5 @@ func binarySearch(storage []int, s int) int {
 
 func main() {
 	st := []int{11, 22, 33, 42, 54, 65, 78, 92, 99}
-	fmt.Println(binarySearch(st, 65))
+	fmt.Println(binarySearch(st, 21))
 }
