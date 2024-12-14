@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/napryag/hw_otus_basic/hw06_testing/hw02_fix_app/printer"
-	"github.com/napryag/hw_otus_basic/hw06_testing/hw02_fix_app/reader"
-	"github.com/napryag/hw_otus_basic/hw06_testing/hw02_fix_app/types"
+	"github.com/napryag/hw_otus_basic/hw06_testing/hw06_testing/hw02_fix_app/printer"
+	"github.com/napryag/hw_otus_basic/hw06_testing/hw06_testing/hw02_fix_app/reader"
+	"github.com/napryag/hw_otus_basic/hw06_testing/hw06_testing/hw02_fix_app/types"
 )
 
 func main() {

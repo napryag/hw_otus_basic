@@ -3,7 +3,7 @@ package reader
 import (
 	"testing"
 
-	"github.com/napryag/hw_otus_basic/hw06_testing/hw02_fix_app/types"
+	"github.com/napryag/hw_otus_basic/hw06_testing/hw06_testing/hw02_fix_app/types"
 	"github.com/stretchr/testify/assert"
 )
 
