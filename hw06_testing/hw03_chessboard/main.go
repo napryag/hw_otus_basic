@@ -6,17 +6,22 @@ import (
 )
 
 func main() {
-	h, w, err := scanValues(8, 8)
+	h, w, err := scanValues(9, 4)
 	if err != nil {
 		fmt.Println("Не удалось создать доску по причине:", err)
 	}
+	fmt.Print(boardMaker(h, w))
+}
 
+func boardMaker(h, w int) [][]string {
+	bb := make([][]string, h)
 	for i := 0; i < h; i++ {
+		bb[i] = make([]string, w)
 		for j := 0; j < w; j++ {
-			fmt.Print(boardWriter(i + j))
+			bb[i][j] = (boardWriter(i + j))
 		}
-		fmt.Println()
 	}
+	return bb
 }
 
 func boardWriter(n int) string {
