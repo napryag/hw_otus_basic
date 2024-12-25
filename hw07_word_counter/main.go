@@ -33,6 +33,6 @@ func countWords(text string) map[string]int {
 func main() {
 	bb := countWords("      Теперь  поговорим  немного!   о  том,!?  как  пакет  " +
 		"strings  может увеличить производительность может как о Теперь. Теперь.")
-	fmt.Println(bb["как"])
+	fmt.Println(bb["том"])
 	fmt.Println(bb["теперь"])
 }
