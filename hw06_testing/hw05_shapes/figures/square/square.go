@@ -11,7 +11,7 @@ func (s *Square) NewSquare(side float64) {
 }
 
 func (s Square) CalculatePerimeter() float64 {
-	return s.Side * s.Side * s.Side * s.Side
+	return s.Side * 4
 }
 
 func (s Square) Square() {
