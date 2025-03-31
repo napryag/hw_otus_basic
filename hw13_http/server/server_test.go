@@ -8,7 +8,7 @@ import (
 )
 
 func TestHandler(t *testing.T) {
-	var ctx context.Context
+	ctx := context.Background()
 	tests := []struct {
 		method       string
 		path         string

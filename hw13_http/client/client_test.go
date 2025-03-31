@@ -8,7 +8,7 @@ import (
 )
 
 func TestSendRequest(t *testing.T) {
-	var ctx context.Context
+	ctx := context.Background()
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("OK"))

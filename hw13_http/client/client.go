@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	var ctx context.Context
+	ctx := context.Background()
 	method := flag.String("method", "GET", "HTTP method (GET or POST)")
 	flag.Parse()
 
